@@ -240,8 +240,15 @@ abstract class BaseDotsIndicator @JvmOverloads constructor(context: Context,
 
     viewPager2.adapter!!.registerAdapterDataObserver(object : AdapterDataObserver() {
       override fun onChanged() {
-        super.onChanged()
         refreshDots()
+      }
+
+      override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
+        onChanged()
+      }
+
+      override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) {
+        onChanged()
       }
     })
 
