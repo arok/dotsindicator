@@ -9,14 +9,14 @@ buildscript {
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion 30
+  namespace 'com.tbuonomo.viewpagerdotsindicator'
+  compileSdkVersion 36
 
   defaultConfig {
     minSdkVersion 15
-    targetSdkVersion 30
+    targetSdkVersion 36
     versionCode 1
     versionName version
   }
@@ -26,6 +26,10 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
